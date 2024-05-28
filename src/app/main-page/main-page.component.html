@@ -1,0 +1,61 @@
+<!-- main-page.component.html -->
+
+<body>
+
+
+<form action="" id="info">
+  <button class="exit__button" (click)="logout()">Выйти</button>
+  <table class="fulls">
+    <tr>
+      <td class="text">
+        X:
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x1" value="-3" /> -3</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x2" value="-2" /> -2</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x3" value="-1" /> -1</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x4" value="0" checked /> 0</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x5" value="1" /> 1</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x6" value="2" /> 2</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x7" value="3" /> 3</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x8" value="4" /> 4</label>
+        <label><input [(ngModel)]="x" class="command_button" type="radio" name="x" id="x9" value="5" /> 5</label>
+        <br><br>
+        Y: <input class="input_style" [(ngModel)]="y" name="y" id="y" />
+        <br><br>
+        R:
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r1" value="-3" /> -3</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r2" value="-2" /> -2</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r3" value="-1" /> -1</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r4" value="0" checked /> 0</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r5" value="1" /> 1</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r6" value="2" /> 2</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r7" value="3" /> 3</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r8" value="4" /> 4</label>
+        <label><input [(ngModel)]="r" class="command_button" type="radio" name="r" id="r9" value="5" /> 5</label>
+        <div>
+          <canvas class="picture" width="170px" height="170px" id="canvas"></canvas>
+        </div>
+        <button class="sub__button" id="info:submit" (click)="check()">Проверить значения</button>
+      </td>
+      <td>
+        <div class="table_container">
+          <table class="table">
+            <tr>
+              <th>X</th>
+              <th>Y</th>
+              <th>R</th>
+              <th>HIT</th>
+            </tr>
+            <tr *ngFor="let point of hits">
+              <td>{{ point.x }}</td>
+              <td>{{ point.y }}</td>
+              <td>{{ point.r }}</td>
+              <td>{{ isHited(point.x,point.y,point.r) ? 'Попал' : 'Мимо' }}</td>
+
+            </tr>
+          </table>
+        </div>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
